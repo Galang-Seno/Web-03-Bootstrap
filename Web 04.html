@@ -12,7 +12,7 @@
 <body>
 
 
-
+<button onclick="scrollToBottom(timedelay(0))">Submit</button>
 
     <header> <!-- Header 1 -->
         <div class="container-fluid p-4 text-white rpl-body" id="Home">
@@ -118,7 +118,22 @@
 
 
     </section>
-
+<script>
+    function scrollToBottom(timedelay=0) {
+        var scrollId;
+        var height = 0;
+        var minScrollHeight = 100;
+        scrollId = setInterval(function () {
+            if (height <= document.body.scrollHeight) {
+                window.scrollBy(0, minScrollHeight);
+            }
+            else {
+                clearInterval(scrollId);
+            }
+            height += minScrollHeight;
+        }, timedelay);           
+    }
+</script>
 </body>
 
 </html>
