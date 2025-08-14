@@ -1,6 +1,15 @@
 .rpl-body{
-    background-image: url(../img/aw.jpg);
+    background-image: url(../img/ab.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: fixed;
-} 
+    background-position: center; /* Menurunkan posisi gambar */
+}
+html {
+    scroll-behavior: smooth;
+}
+.rpl-body2{
+    background-image: url(../img/aa.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; /* Menurunkan posisi gambar */
+}
