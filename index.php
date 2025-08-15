@@ -68,30 +68,13 @@
 
     <section> <!-- Navigation  1 -->
         <div class="container-fluid p-5" id="Hygea">
-            <?php
-            include 'init_koneksi_db.php';
-            ?>
             <div class="row">
-                <div class="col-md-7 py-5">
-                    <?php
-                    
-$sql = "SELECT judul, keterangan FROM web;";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo '<h1>' . $row["judul"] . '</h1>';
-    echo '<p>' . $row["keterangan"] . '</p>';
-  }
-}
-$conn->close(); 
-                        ?>
+            <div class="col p-10 py-5" id="HEAD">
                 </div>
                 <div class="col-md-4 py-5">
                     <img class="w-100" src="Asset/img/TPSS.png" alt="gambar alam">
                 </div>
-            </div>
+    </div>
         </div>
     </section>
 
@@ -295,6 +278,20 @@ $conn->close();
         window.addEventListener('scroll', stickyNavigation);
         //]]>
     </script>
+    <script>
+  function refreshSection() {
+    fetch('getdataphp.php')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('HEAD').innerHTML = data;
+      })
+      .catch(error => console.error('Error:', error));
+  }
+
+  refreshSection(); // pertama kali
+  setInterval(refreshSection, 5000); // setiap 5 detik
+
+       </script>
 </body>
 
 </html>
