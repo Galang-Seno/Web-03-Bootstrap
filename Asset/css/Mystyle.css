@@ -16,3 +16,7 @@ html {
 .contw{
     background-color: #592628;
 }
+.text-ya{
+    color: #f38080;
+}
+.fixed-nav #fixedmenu{position:fixed;top:0;left:0;width:100%;z-index:999;}
