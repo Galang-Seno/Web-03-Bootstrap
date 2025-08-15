@@ -68,17 +68,33 @@
 
     <section> <!-- Navigation  1 -->
         <div class="container-fluid p-5" id="Hygea">
+            <?php
+            include 'init_koneksi_db.php';
+            ?>
             <div class="row">
                 <div class="col-md-7 py-5">
-                    <h1>Apa sih itu Hygea?</h1>
-                    <p>Hygea adalah kelompok pengembangan produk dari Politeknik Atmi yang beranggotakan Galang, Lino,
+                    <?php
+                    
+$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+  }
+}
+                     print "<h1>Apa sih itu Hygea?</h1>";
+                    
+                     print "<p>Hygea adalah kelompok pengembangan produk dari Politeknik Atmi yang beranggotakan Galang, Lino,
                         dan Stevent. Kelompok ini memiliki mentor, yaitu Mas Bowo, Sang penunggang Ai. Hygea awalnya
                         dibentuk untuk mewakili Politeknik Atmi dalam kompetisi yang diselenggarakan oleh PLN berjudul
                         Electrochic di Kota Surakarta. Selain Hygea, terdapat juga kelompok dari Atmi yang ikut
                         kompetisi Electrochic
                         yaitu
                         RePlastic Groub, Sehingga dari kampus sendiri Hygea sudah memiliki saingan. Salah satu project
-                        hygea adalah Tesabot, yang ada di gambar sebelah kanan ini</p>
+                        hygea adalah Tesabot, yang ada di gambar sebelah kanan ini</p>";
+                        ?>
                 </div>
                 <div class="col-md-4 py-5">
                     <img class="w-100" src="Asset/img/TPSS.png" alt="gambar alam">
@@ -97,9 +113,10 @@
                 </center>
             </div>
 
-
+<br>
+<br>
             <div class="row">
-                <div class="col p-3 py-5">
+                <div class="col p-3 py-5 conte" style="border-radius: 10%;">
                     <h2 class="text-center">Tesabot</h2>
                     <p>
                         Tesabot adalah singkatan dari Tempat Sampah Robot, yaitu sebuah alat yang digunakan untuk
@@ -113,7 +130,8 @@
                         akan lebih sadar mengenai pentingnya pengelompokan sampah, untuk mendukung gerakan daur ulang.
                     </p>
                 </div>
-                <div class="col p-3 py-5">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="col p-3 py-5 conte" style="border-radius: 10%;">
                     <h2 class="text-center">Fitur</h2>
                     <p>
                         Tesabot memiliki beberapa fitur unggulan, antara lain:
@@ -126,8 +144,8 @@
                     Dengan fitur-fitur tersebut, Tesabot diharapkan dapat meningkatkan efisiensi dan efektivitas
                     dalam pengelolaan sampah.
                     </p>
-                </div>
-                <div class="col p-3 py-5">
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="col p-3 py-5 conte " style="border-radius: 10%;">
                     <h2 class="text-center">Manfaat</h2>
                     <p>
                         Manfaat dari Tesabot adalah menjadi sarana edukasi bagi masyarakat mengenai jenis-jenis sampah,
