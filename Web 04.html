@@ -3,7 +3,10 @@
 
 <head>
 
-
+<!-- Header 1 Komitmen pada higenis -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="Asset/jquerry/jquery-3.7.1.js"></script>
+<script src="Asset/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="Asset/Css/bootstrap.min.css">
     <link rel="stylesheet" href="Asset/Css/Mystyle.css">
 
@@ -48,14 +51,14 @@
         <div class="container-fluid p-5" id="Hygea">
             <div class="row">
                 <div class="col-md-7 py-5">
-                    <h1>Project Hygea "Tesabot"</h1>
+                    <h1>Apa sih itu Hygea?</h1>
                     <p>Hygea adalah kelompok pengembangan produk dari Politeknik Atmi yang beranggotakan Galang, Lino,
                         dan Stevent. Kelompok ini memiliki mentor, yaitu Mas Bowo, Sang penunggang Ai. Hygea awalnya
                         dibentuk untuk mewakili Politeknik Atmi dalam kompetisi yang diselenggarakan oleh PLN berjudul
                         Electrochic di Kota Surakarta. Selain Hygea, terdapat juga kelompok dari Atmi yang ikut
                         kompetisi Electrochic
                         yaitu
-                        RePlastic Groub, Sehingga dari kampus sendiri Hygea sudah memiliki saingan.</p>
+                        RePlastic Groub, Sehingga dari kampus sendiri Hygea sudah memiliki saingan. Salah satu project hygea adalah Tesabot, yang ada di gambar sebelah kanan ini</p>
                 </div>
                 <div class="col-md-4 py-5">
                     <img class="w-100" src="Asset/img/TPSS.png" alt="gambar alam">
@@ -117,9 +120,13 @@
 
 
     </section>
+    
+    <section>
+<div class="container-fluid p-5  text-white contw" id="About">
+<canvas id="myChart" style="width:100%;max-width:700px" class="text-white text-end"></canvas>
+</div>
+    </section>
 
-<script src="Asset/jquerry/jquery-3.7.1.js"></script>
-<script src="Asset/js/bootstrap.bundle.min.js"></script>
 <script>
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
@@ -133,6 +140,58 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 </script>
+
+<script>
+const xValues = ["1 Bulan", "2 Bulan ", "3 Bulan ", "4 Bulan", "5 Bulan"];
+const yValues = [10, 25, 50, 80, 150];
+const barColors = ["brown", "green","blue","orange","red"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+        xAxes: [{
+          ticks: {
+            fontColor: "orange",
+            fontSize: 16,
+            fontFamily: "Arial",
+            fontStyle: "alternate",
+          }
+        }],
+      yAxes: [{
+        ticks: {
+            fontColor: "red",
+            fontSize: 16,
+            fontFamily: "Arial",
+            fontStyle: "bold",
+          beginAtZero: true
+        }
+      }]
+    },
+
+    title: {
+      display: true,
+      
+      text: "Berat sampah yang dipilah setelah Tesabot digunakan (Kg)",
+      fontSize: 20,
+      fontFamily: "Arial",
+      fontstyle: "bold",
+      lineheight: 1.5,
+      
+      fontColor: "yellow",
+    }
+  }
+});
+</script>
+
 </body>
 
 </html>
