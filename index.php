@@ -75,25 +75,17 @@
                 <div class="col-md-7 py-5">
                     <?php
                     
-$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$sql = "SELECT judul, keterangan FROM web;";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+    echo '<h1>' . $row["judul"] . '</h1>';
+    echo '<p>' . $row["keterangan"] . '</p>';
   }
 }
-                     print "<h1>Apa sih itu Hygea?</h1>";
-                    
-                     print "<p>Hygea adalah kelompok pengembangan produk dari Politeknik Atmi yang beranggotakan Galang, Lino,
-                        dan Stevent. Kelompok ini memiliki mentor, yaitu Mas Bowo, Sang penunggang Ai. Hygea awalnya
-                        dibentuk untuk mewakili Politeknik Atmi dalam kompetisi yang diselenggarakan oleh PLN berjudul
-                        Electrochic di Kota Surakarta. Selain Hygea, terdapat juga kelompok dari Atmi yang ikut
-                        kompetisi Electrochic
-                        yaitu
-                        RePlastic Groub, Sehingga dari kampus sendiri Hygea sudah memiliki saingan. Salah satu project
-                        hygea adalah Tesabot, yang ada di gambar sebelah kanan ini</p>";
+$conn->close(); 
                         ?>
                 </div>
                 <div class="col-md-4 py-5">
