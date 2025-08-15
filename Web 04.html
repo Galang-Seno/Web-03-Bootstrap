@@ -3,13 +3,15 @@
 
 <head>
 
-    <!-- Header 1 Komitmen pada higenis -->
+    <!-- Header 1 Komitmen pada higenis 
+     tambah video-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="Asset/jquerry/jquery-3.7.1.js"></script>
     <script src="Asset/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="Asset/Css/bootstrap.min.css">
     <link rel="stylesheet" href="Asset/Css/Mystyle.css">
-
+    <link rel="icon" href="Asset/img/photo.jpg" type="image/jpeg" sizes="16x16" class="rounded-circle img-thumbnail border-radius: 100%;">
+    <title>Hygea</title>
 </head>
 
 <body>
@@ -44,6 +46,10 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#Komitmen">Komitmen</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#Contact">Contact us</a>
                 </li>
             </ul>
         </div>
@@ -149,11 +155,12 @@
             </div>
     </section>
     <section>
-        <footer class="text-center text-white bg-dark p-1">
+        <footer class="text-center text-white bg-dark p-1" id="Contact">
+            <br>
             <p>© 2025 Hygea. All rights reserved.</p>
-            <p>Contact us : galangsenonatakusuma@gmail.com<a href="mailto:"></a> 
+            <p>Contact us : galangsenonatakusuma@gmail.com<a href="mailto:"></a>
             </p>
-            </section>
+    </section>
 
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -219,25 +226,25 @@
             }
         });
     </script>
-   <script>
-//<![CDATA[
-const nav = document.querySelector('#fixedmenu');
-const navTop = nav.offsetTop;
+    <script>
+        //<![CDATA[
+        const nav = document.querySelector('#fixedmenu');
+        const navTop = nav.offsetTop;
 
-function stickyNavigation() {
-  console.log('navTop = ' + navTop);
-  console.log('scrollY = ' + window.scrollY);
+        function stickyNavigation() {
+            console.log('navTop = ' + navTop);
+            console.log('scrollY = ' + window.scrollY);
 
-  if (window.scrollY >= navTop) {
-    document.body.classList.add('fixed-nav');
-  } else {
-    document.body.classList.remove('fixed-nav');
-  }
-}
+            if (window.scrollY >= navTop) {
+                document.body.classList.add('fixed-nav');
+            } else {
+                document.body.classList.remove('fixed-nav');
+            }
+        }
 
-window.addEventListener('scroll', stickyNavigation);
-//]]>
-</script>
+        window.addEventListener('scroll', stickyNavigation);
+        //]]>
+    </script>
 </body>
 
 </html>
